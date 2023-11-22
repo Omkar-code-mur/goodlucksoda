@@ -8,7 +8,7 @@
     font-family: Arial, sans-serif;
     display: inline-flex;
     flex-direction: column;
-    font-size: 1vw;
+    font-size: 0.5vw;
     align-items: center;
     justify-content: space-between;
     background-color: rgb(242, 94, 36)   ;
@@ -41,6 +41,9 @@
     .card {
       width: 40vw;
       height: 40vw;
+      font-size: 5vw;
+    }
+    .text{
       font-size: 3vw;
     }
     }
@@ -51,7 +54,7 @@
       font-size: 5vw;
     }
     .text{
-      font-size: 4vw;
+      font-size: 6vw;
     }
     }
   @media only screen and (max-width: 500px) {
@@ -60,7 +63,7 @@
       font-size: 3vw;
     }
     .text{
-      font-size: 2vw;
+      font-size: 6vw;
     }
     }
   
