@@ -1,30 +1,80 @@
+.body{
+  font-family: 'Montserrat', sans-serif;
+}
 
-.nav{
-  height: 50px;
+
+.logo {
+  float: left;
+  display: inline;
+  align-items: start;
+  padding-top: 10px;
+  margin-top: 10px;
+  padding-left: 30px;
+}
+
+
+nav{
+  background-color: black;
+  height: 90px;
   width: 100%;
   position: fixed;
-  margin-top: 0;
-  align-items: left;
-  background-color: #EA907A;
+  align-items: center;
+  text-align: center;
+  display: flex;
 }
-
 .nav-item{
-  display:inline;
-  text-align: left;
-  align-items: left;
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: black;
-  margin-top: 0;
+  font-size: 50px;
+  list-style: none;
+  display: inline;
 }
+
+
 .cards{
-  margin-top: 50px;
+  margin-top: 90px;
   display:inline-block;
-  background-color: #F4F7C5;
+  background-color: rgb(228, 167, 62);
+}
+
+
+.btn{
+  height: 95%;
+  width: 100%;
+  text-align: center;
+  
+  align-items: baseline;
+  font-size: larger;
+  margin: 5px;
+  padding: 0;
+  background-color: rgb(211, 211, 38);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.4s;
+  border: 0;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px 1px #050505;
+}
+
+.btn:active {
+  transform: scale(0.90);
+}
+.btn p{
+  padding-top: px;
+  margin: 2px;
+  color:rgb(6, 6, 6);
+  font-size: larger;
 }
 
 
 
 
-  
+
+price{
+  color: red;
+  font-size: larger;
+}
+
+@media only screen and (max-width: 400px){
+  .nav-item{
+    font-size: 8vw;
+    padding-left: 15px;
+  }
+}

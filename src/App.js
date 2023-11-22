@@ -1,64 +1,62 @@
 /** @format */
 
 import Card from "./Componants/Card";
-// import orange from "../public/images/orange-soda"
-
 import "./App.css";
 import Navbar from "./Componants/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const orange = require.context(
-  "D:/Omkar/Carrier related/WEB/react Projects/goodlucksoda/public/images/orange",
-  true
-);
-const cola = require.context(
-  "D:/Omkar/Carrier related/WEB/react Projects/goodlucksoda/public/images/cola",
-  true
-);
-const jeera = require.context(
-  "D:/Omkar/Carrier related/WEB/react Projects/goodlucksoda/public/images/jeera",
-  true
-);
-const limbo = require.context(
-  "D:/Omkar/Carrier related/WEB/react Projects/goodlucksoda/public/images/limbo",
-  true
-);
-const blueberry = require.context(
-  "D:/Omkar/Carrier related/WEB/react Projects/goodlucksoda/public/images/blueberry",
-  true
-);
 
-const orangeList = orange.keys().map((image) => orange(image));
-const colaList = cola.keys().map((image) => cola(image));
-const jeeraList = jeera.keys().map((image) => jeera(image));
-const limboList = limbo.keys().map((image) => limbo(image));
-const blueberryList = blueberry.keys().map((image) => blueberry(image));
 
 const sodas = [
-  { title: "Orange Soda", url: orangeList[0] },
-  { title: "Cola Soda", url: colaList[0] },
-  { title: "Jeera Soda", url: jeeraList[0] },
-  { title: "Limbo Soda", url: limboList[0] },
-  { title: "Blueberry Soda", url: blueberryList[0] },
+  { title: "Orange Soda", url: "images/orange.jpg" },
+  { title: "Jeera Soda", url: "images/jeera.jpg" },
+  { title: "Fruit Beer Soda", url: "images/fruitBeer.jpg" },
+  { title: "Blueberry Soda", url: "images/blueberry.jpg" },
+  { title: "Mango Soda", url: "images/mango.jpg" },
+  { title: "Limca Soda", url: "images/limca.jpg" },
+  { title: "Kala Khatta ", url: "images/kalaKhatta.jpg" },
+  { title: "Pudina Soda ", url: "images/pudina.jpg" },
+  { title: "Pinapple Soda ", url: "images/pineApple.jpg" },
+  { title: "Lemon Soda ", url: "images/lemon.jpg" },
+  { title: "Strawberry Soda ", url: "images/strawberry.jpg" },
+  { title: "Cola Soda", url: "images/cola.jpg" }
 ];
+const sodas15 = [
+  
+  { title: "Limbo Masala", url: "images/15/sweetLemon.jpg" },
+  { title: "Sweet Limbo", url: "images/15/masala.jpg" },
+  { title: "Salty Limbo", url: "images/15/saltyLemon.jpg" },
+  { title: "Ginger Limbo", url: "images/15/ginger.jpg" },
+  { title: "Nimbu Sharbat", url: "images/15/nimbuSharbat.jpg" },
+]
+
+
+
 function App() {
   return (
     <Router>
-      <Navbar />
+      <Navbar/>
       <div className='cards'>
         <Routes>
           {/* <Route path='/' element={<Card image={orange}/>} /> */}
           <Route
             path='/home'
             element={
-              <Card title='orange' image={orangeList[0]} description='Rs 10' />
+              <Card title='orange' image="images/orange.jpg" description='₹10' />
             }
           />
           <Route path='/about' element={<Card />} />
         </Routes>
         {sodas.map((soda)=>{
           return(
-            <Card key = {soda.title} title={soda.title} image={soda.url} description='Rs 10' />
+            <Card key = {soda.title} title={soda.title} image={soda.url} description='₹10' value={10} />
+          )
+          
+          
+        })}
+        {sodas15.map((soda)=>{
+          return(
+            <Card key = {soda.title} title={soda.title} image={soda.url} description='₹15' value={10}/>
           )
           
           

@@ -1,15 +1,27 @@
-import React from 'react'
-import '../App.css';
-import {Link} from 'react-router-dom'
-export default function Navbar() {
+/** @format */
+
+import React from "react";
+import "../App.css";
+
+import { Link } from "react-router-dom";
+export default function Navbar(props) {
   return (
-    <div className='nav'>
-        <ul>
-            <Link to="/"><li className='nav-item'>Goodluck Soda</li></Link>
-            <Link to="/home"><li className='nav-item'>Home</li></Link>
-            <Link to="/about"><li className='nav-item'>About</li></Link>
-            
-        </ul>
-    </div>
-  )
+    <>
+      <nav>
+        <Link to='/' className='logo'>
+          <img
+            src='images/logo/logo.png'
+            alt='GoodLuck Soda Logo'
+            height={"90px"}
+          />
+        </Link>
+        <Link className="nav-item" style={{ textDecoration: "none", color:"white" }} to='/'>
+              Goodluck Soda
+            </Link>
+
+         
+       
+      </nav>
+    </>
+  );
 }
