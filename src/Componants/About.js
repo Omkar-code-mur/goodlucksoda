@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 export default function About() {
   return (
     // <div className='footer ' style={{"overflow-x":"auto;"}}>
