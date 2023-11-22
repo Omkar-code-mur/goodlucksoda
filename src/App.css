@@ -12,6 +12,12 @@
   padding-left: 30px;
 }
 
+h2 b{
+  padding-left: 5px;
+  color: red;
+  font-size: larger;
+}
+
 
 nav{
   background-color: black;
@@ -67,10 +73,7 @@ nav{
 
 
 
-price{
-  color: red;
-  font-size: larger;
-}
+
 
 @media only screen and (max-width: 400px){
   .nav-item{

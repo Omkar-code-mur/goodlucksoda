@@ -15,12 +15,12 @@ export default function Navbar(props) {
             height={"90px"}
           />
         </Link>
-        <Link className="nav-item" style={{ textDecoration: "none", color:"white" }} to='/'>
-              Goodluck Soda
-            </Link>
-
-         
-       
+        <Link
+          className='nav-item'
+          style={{ textDecoration: "none", color: "white" }}
+          to='/'>
+          Goodluck Soda
+        </Link>
       </nav>
     </>
   );

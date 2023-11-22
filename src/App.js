@@ -40,7 +40,7 @@ function App() {
         <Routes>
           {/* <Route path='/' element={<Card image={orange}/>} /> */}
           <Route
-            path='/home'
+            path='/'
             element={
               <Card title='orange' image="images/orange.jpg" description='₹10' />
             }
