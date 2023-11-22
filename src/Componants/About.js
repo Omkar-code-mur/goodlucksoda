@@ -62,7 +62,7 @@ export default function About() {
     <footer>
       <div className="row">
         <div className="col">
-          <img  src="images/logo/logo2.jpg" alt="a boy drinking soda" style={{borderRadius:50, height:"20vw" ,alignSelf:"center"}}/>
+          <img  src="images/logo/logo2.jpg" alt="a boy drinking soda" style={{borderRadius:50, height:"17vw" ,alignSelf:"center"}}/>
         </div>
 
         <div className="col">
@@ -82,7 +82,7 @@ export default function About() {
           <p><a className="email-id" href="mailto:goodlucksodashop@gmail" >goodlucksodashop@gmail.com</a></p>
         </div>
         <div className="col">
-          <img src="images/logo/logo3.jpg" alt="A girl drinking orange soda."  style={{borderRadius:50, height:"20vw"}}/>
+          <img src="images/logo/logo3.jpg" alt="A girl drinking orange soda."  style={{borderRadius:50, height:"17vw"}}/>
         </div>
 
       </div>
