@@ -13,7 +13,6 @@ function App() {
 
           </Route>
         </Routes>
-        <Cards/>
       </div>
     </Router>
   );
