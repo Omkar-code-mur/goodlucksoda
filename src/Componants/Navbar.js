@@ -8,7 +8,7 @@ export default function Navbar(props) {
   return (
     <>
       <nav>
-        <Link to='/' className='logo'>
+        <Link to="/" className='logo'>
           <img
             src='images/logo/logo.png'
             alt='GoodLuck Soda Logo'
@@ -18,7 +18,7 @@ export default function Navbar(props) {
         <Link
           className='nav-item'
           style={{ textDecoration: "none", color: "white" }}
-          to='/'>
+          to="/">
           Goodluck Soda
         </Link>
       </nav>
