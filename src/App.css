@@ -1,5 +1,6 @@
 .body{
   font-family: 'Montserrat', sans-serif;
+  background-color: orange;
 }
 
 
@@ -20,23 +21,65 @@ h2 b{
 
 
 nav{
-  background-color: black;
+  background: linear-gradient(to right,#00093c,#2d0b00);
   height: 90px;
   width: 100%;
   position: fixed;
   align-items: center;
   text-align: center;
   display: flex;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
+
+.footer{
+  background-color: rgb(48, 47, 47);
+  height: fit-content;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  display: block;
+  margin: 0;
+  
+  align-content: center;
+}
+.about{
+  background-color: rgb(228, 167, 62);
+}
+
 .nav-item{
+  padding-left: 20px;
   font-size: 50px;
   list-style: none;
   display: inline;
 }
+.footer-item{
+  color: aliceblue;
+  padding: 20px;
+  margin: 0;
+  font-size: 30px;
+  align-items: center;
+  text-align: center;
+}
+.footer-item h5 {
+  color: aliceblue;
+  display:block;
+  
+  
+  
+}
+/* .footer h5 {
+  width: 30%;
+  align-self: center;
+} */
+.footer table td a{
+  color: azure;
+  text-decoration: none;
+}
 
 
 .cards{
-  margin-top: 90px;
+  padding-top: 90px;
   display:inline-block;
   background-color: rgb(228, 167, 62);
 }
@@ -69,15 +112,62 @@ nav{
   font-size: larger;
 }
 
+footer{
+  width: 100%;
+  position:relative;
+  bottom: 0;
+  
+  background: linear-gradient(to right,#00093c,#2d0b00);
+  
+  color: #fff;
+  padding: 100px 0 30px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  font-size: 13px;
+  line-height: 20px;
+}
+.row{
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.col{
+  flex-basis: 22%;
+  padding: 10px;
+}
+
+
+.col h3{
+  width: fit-content;
+  margin-bottom: 40px;
+  position: relative;
+}
+.email-id{
+  width: fit-content;
+  color: #ccc;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  margin: 20px 0;
+  
+}
 
 
 
 
 
+@media only screen and (max-width: 600px){
+  .nav-item{
+    font-size: 8vw;
+    padding-left: 15px;
+  }
+}
 
 @media only screen and (max-width: 400px){
   .nav-item{
-    font-size: 8vw;
+    font-size: 6vw;
     padding-left: 15px;
   }
 }

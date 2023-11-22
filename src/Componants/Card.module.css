@@ -25,13 +25,42 @@
     height: 80%;
     object-fit: cover;
   }
+  .text{
+    font-size: 2vw;
+  }
   
 
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 1500px) {
+    .card {
+      width: 29vw;
+      height: 40vw;
+      font-size: 3vw;
+    }
+    }
+  @media only screen and (max-width: 950px) {
+    .card {
+      width: 40vw;
+      height: 40vw;
+      font-size: 3vw;
+    }
+    }
+  @media only screen and (max-width: 700px) {
     .card {
       width: 80vw;
       height: 100vw;
+      font-size: 5vw;
+    }
+    .text{
+      font-size: 4vw;
+    }
+    }
+  @media only screen and (max-width: 500px) {
+    .card {
+      width: 80vw;
       font-size: 3vw;
+    }
+    .text{
+      font-size: 2vw;
     }
     }
   

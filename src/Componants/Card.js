@@ -9,7 +9,7 @@ export default function Card(props) {
       <button className='btn'>
         <img className={styles.image} src={image} alt={title} />
         
-          <h2>{title} <b>{description}</b></h2>
+          <h2 className={styles.text}>{title} <b>{description}</b></h2>
         
       </button>
     </div>

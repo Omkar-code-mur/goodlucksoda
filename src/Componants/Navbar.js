@@ -7,7 +7,10 @@ import { Link } from "react-router-dom";
 export default function Navbar(props) {
   return (
     <>
-      <nav>
+      <nav >
+      
+
+
         <Link to="/" className='logo'>
           <img
             src='images/logo/logo.png'
