@@ -25,7 +25,7 @@ export default function Cards() {
         { title: "Nimbu Sharbat", url: "images/15/nimbuSharbat.jpg" },
       ]
   return (
-    <div>
+    <div className='cards'>
         {sodas.map((soda)=>{
             return(
               <Card key = {soda.title} title={soda.title} image={soda.url} description='₹10' value={10} />

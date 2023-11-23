@@ -1,0 +1,67 @@
+footer{
+    width: 100%;
+    position:relative;
+    bottom: 0;
+    
+    background: linear-gradient(to right,#00093c,#2d0b00);
+    
+    color: #fff;
+    padding: 100px 0 30px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .col{
+    flex-basis: 22%;
+    padding: 10px;
+  }
+  
+  
+  .col h3{
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .email_id{
+    width: fit-content;
+    color: #ccc;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+    
+  }
+  footer .row .col img{
+    border-radius:50px;
+    height:17vw;
+    align-self:center;
+   }
+
+   @media only screen and (max-width: 1000px){
+    footer .row .col img{
+        border-radius:50px;
+        height: 30vw;
+        align-self:center;
+        padding: 20px;
+       }
+       .col{
+        flex-basis: 45%;
+        padding: 10px;
+      }
+  }
+   @media only screen and (max-width: 500px){
+    footer .row .col img{
+        display:none;
+       }
+       .col{
+        flex-basis: 100%;
+        padding: 10px;
+        align-content: center;
+      }
+  }
