@@ -98,7 +98,8 @@ header{
 }
 @media only screen and (max-width: 500px) {
  .nav .logo a{
-  /* display: block; */
+  display: inline-block;
+  font-size: medium;
  }
  .nav .logo img{
   align-self: center;
