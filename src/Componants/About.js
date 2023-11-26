@@ -1,36 +1,31 @@
 /** @format */
-import styles from "./About.module.css"
+
 import React from "react";
-// import { Link } from "react-router-dom";
+import styles from "./About.module.css";
 export default function About() {
   return (
     <footer>
+        <h2 className={styles.header_dark}>About Us</h2>
       <div className={styles.row}>
         <div className={styles.col}>
-          <img src="images/logo/logo2.jpg" alt="a boy drinking soda" />
+          <img src='images/logo/shopPhoto.jpeg' alt='goodluck soda shop' />
         </div>
 
         <div className={styles.col}>
-        <h3>Address </h3>
-        <a className={styles.email_id} href='https://maps.app.goo.gl/a5B7RYBvpd9oZV5P6' rel="noreferrer" target="_blank">
-              <p >
-                   S No-8/1, NDA Rd, Deshmukhwadi, Deshmukh Nagar, Shivane, Pune,
-                   NDA Rd, Uttam Nagar, Deshmukh Nagar, Shivane, Pune,
-                   Maharashtra 411023
-                 </p>
-               </a>
+          <h1>GoodLuck Soda Story </h1>
 
+          <p>
+            Goodluck Soda Shop is a family-owned business that started in 2014
+            with a passion for creating and serving delicious and refreshing
+            soda drinks. We offer a variety of flavours, from classic ones like
+            cola, orange, and lemon to exotic ones like mango, blueberry, and
+            kala khata. We also love experimenting with new flavours and
+            combinations, and we always welcome feedback and suggestions from
+            our customers.
+          </p>
         </div>
-        <div className={styles.col}>
-          <h3>Contact Us</h3>
-          <p>8308986134 / 9588680935</p>
-          <p><a className="email-id" href="mailto:goodlucksodashop@gmail" >goodlucksodashop@gmail.com</a></p>
-        </div>
-        <div className={styles.col}>
-          <img src="images/logo/logo3.jpg" alt="A girl drinking orange soda."  />
-        </div>
-
       </div>
+      
     </footer>
   );
 }

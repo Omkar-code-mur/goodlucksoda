@@ -1,8 +1,12 @@
 .body{
   font-family: 'Montserrat', sans-serif;
   background-color: orange;
+  box-sizing: border-box;
 }
 
+App{
+  background-color: pink;
+}
 
 .cards{
   padding-top: 0;
@@ -13,7 +17,7 @@
 }
 
 
-.btn{
+/* .btn{
   height: 100%;
   width: 100%;
   text-align: center;
@@ -28,8 +32,8 @@
   border: 0;
   border-radius: 20px;
   box-shadow: 5px 5px 10px 1px #050505;
-}
-
+} */
+/* 
 .btn:active {
   transform: scale(0.90);
 }
@@ -41,7 +45,7 @@
   margin: 2px;
   color:rgb(6, 6, 6);
   font-size: larger;
-}
+} */
 
 
 
