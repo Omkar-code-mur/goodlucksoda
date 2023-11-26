@@ -7,7 +7,7 @@ import "./Navbar.module.css";
 import { Link } from "react-router-dom";
 export default function Navbar(props) {
   const [dropdown, setDropdown] = useState("");
-  const [sodaCount, setSodaCount] = useState(props.count);
+  // const [sodaCount, setSodaCount] = useState(props.count);
   const [dropdownIcon, setDropdownIcon] = useState("bars");
   
   const toggleDropdown = () => {
