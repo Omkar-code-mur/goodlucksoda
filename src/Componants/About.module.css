@@ -27,7 +27,8 @@ footer{
   justify-content: space-between;
 }
 .col{
-  flex-basis: 45%;
+  display: block;
+  flex-basis: 45vw;
   padding: 10px;
 }
  p{
@@ -44,5 +45,37 @@ footer .row .col img{
   align-self:center;
  }
  
+
+ @media screen and (max-width:1000px) {
+  .row{
+    display: block;
+  }
+  .col{
+    flex-basis: 80%;
+    padding: 10px;
+  }
+  p{
+    font-size: 1rem;
+    line-height: 1.5rem;
+   }
+   h1{
+    font-size: 2rem;
+    padding-bottom: 1rem;
+  }
+  footer .row .col img{
+    height:80vw;
+    align-self:center;
+   }
+ }
+ @media screen and (max-width:500px) {
+  p{
+    font-size: 0.5rem;
+    line-height: 1rem;
+   }
+   h1{
+    font-size: 1rem;
+    padding-bottom: 1rem;
+  }
+ }
 
  
