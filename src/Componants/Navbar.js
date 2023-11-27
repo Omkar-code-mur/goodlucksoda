@@ -9,7 +9,7 @@ export default function Navbar(props) {
   const [dropdown, setDropdown] = useState("");
   // const [sodaCount, setSodaCount] = useState(props.count);
   const [dropdownIcon, setDropdownIcon] = useState("bars");
-  
+
   const toggleDropdown = () => {
     if (dropdown === "") {
       setDropdown(styles.open);
@@ -23,10 +23,10 @@ export default function Navbar(props) {
     }
     console.log("clicked");
   };
-  
+
   return (
     <>
-    {}
+      {}
       <div className={styles.nav}>
         <div className={styles.logo}>
           <img src='images/logo/logo.png' alt='GoodLuck Soda Logo' />
@@ -34,15 +34,17 @@ export default function Navbar(props) {
         </div>
         <ul className={styles.links}>
           <li>
-            <Link to ="/">Home</Link>
+            <Link to='/'>Home</Link>
           </li>
           <li>
-            <Link to="about">About</Link>
+            <Link to='about'>About</Link>
           </li>{" "}
-          
           <li>
-            <Link to ="contact">Contact</Link>
+            <Link to='contact'>Contact</Link>
           </li>
+          <li>
+          <a href ='https://g.page/r/CSW6pGbKLNpGEBM/review' target="_black">Add Review</a>
+        </li>
           {/* <li>
             <Link><i className='fas fa-shopping-cart'></i></Link>
             
@@ -57,17 +59,19 @@ export default function Navbar(props) {
         </div>
       </div>
       <div className={styles.drop_down + " " + dropdown}>
-      <li>
-            <Link to ="/">Home</Link>
-          </li>
-          <li>
-            <Link to="about">About</Link>
-          </li>{" "}
-          
-          <li>
-            <Link to ="contact">Contact</Link>
-          </li>
-          {/* <li>
+        <li>
+          <Link to='/'>Home</Link>
+        </li>
+        <li>
+          <Link to='about'>About</Link>
+        </li>{" "}
+        <li>
+          <Link to='contact'>Contact</Link>
+        </li>
+        <li>
+          <a href ='https://g.page/r/CSW6pGbKLNpGEBM/review'>Add Review</a>
+        </li>
+        {/* <li>
             <Link><i className='fas fa-shopping-cart'></i></Link>
             
           </li> */}

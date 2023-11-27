@@ -25,7 +25,11 @@ export default function Contact() {
         <div className={styles.col}>
           <h2>Contact Us</h2>
           <p>8308986134 / 9588680935</p>
+          <a href ='https://g.page/r/CSW6pGbKLNpGEBM/review'>Add Review</a>
           <p><a className="email-id" href="mailto:goodlucksodashop@gmail" >goodlucksodashop@gmail.com</a></p>
+          
+          
+      
         </div>
         <div className={styles.col}>
           <img src="images/logo/logo3.jpg" alt="A girl drinking orange soda."  />
