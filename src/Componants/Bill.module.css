@@ -3,11 +3,12 @@
     /* margin: 5px; */
     padding: 30px;
     width: 100vw;
+    border: grey 1px solid;
 }
 
 .billItem{
     background-color: rgb(244, 247, 249);
-    
+    border: grey 1px solid;
     font-size: smaller;
 }
 
