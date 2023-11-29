@@ -45,10 +45,10 @@ export default function Navbar(props) {
           <li>
           <a href ='https://g.page/r/CSW6pGbKLNpGEBM/review' target="_black">Add Review</a>
         </li>
-          {/* <li>
-            <Link><i className='fas fa-shopping-cart'></i></Link>
+          <li>
+            <Link to="cart"><i className='fas fa-shopping-cart'></i></Link>
             
-          </li> */}
+          </li>
         </ul>
         <div className={styles.toggle_btn}>
           <li>
@@ -71,10 +71,10 @@ export default function Navbar(props) {
         <li>
           <a href ='https://g.page/r/CSW6pGbKLNpGEBM/review'>Add Review</a>
         </li>
-        {/* <li>
-            <Link><i className='fas fa-shopping-cart'></i></Link>
+        <li>
+            <Link to="cart"><i className='fas fa-shopping-cart'></i></Link>
             
-          </li> */}
+          </li>
       </div>
     </>
   );

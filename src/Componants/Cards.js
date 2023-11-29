@@ -7,47 +7,41 @@ import About from "./Contact";
 import Banner from "./Banner"; 
 export default function Cards(props) {
   const bestSellers = [
-    { title: "Jeera Soda", url: "images/jeera.jpg" },
-    { title: "Fruit Beer Soda", url: "images/fruitBeer.jpg" },
-    { title: "Blueberry Soda", url: "images/blueberry.jpg" },
-    { title: "Sweet Limbo", url: "images/15/sweetlemon.jpg" },
+    { title: "Jeera Soda", url: "images/jeera.jpg", value:10  },
+    { title: "Fruit Beer Soda", url: "images/fruitBeer.jpg", value:10  },
+    { title: "Blueberry Soda", url: "images/blueberry.jpg", value:10  },
+    { title: "Sweet Limbo", url: "images/15/sweetlemon.jpg", value:15  },
   ];
   const sodas = [
-    { title: "Mango Soda", url: "images/mango.jpg" },
-    { title: "Limca Soda", url: "images/limca.jpg" },
-    { title: "Kala Khatta ", url: "images/kalaKhatta.jpg" },
-    { title: "Pudina Soda ", url: "images/pudina.jpg" },
-    { title: "Pinapple Soda ", url: "images/pineApple.jpg" },
-    { title: "Orange Soda", url: "images/orange.jpg" },
-    { title: "Jeera Soda", url: "images/jeera.jpg" },
-    { title: "Fruit Beer Soda", url: "images/fruitBeer.jpg" },
-    { title: "Blueberry Soda", url: "images/blueberry.jpg" },
-
-    { title: "Lemon Soda ", url: "images/lemon.jpg" },
-    { title: "Strawberry Soda ", url: "images/strawberry.jpg" },
-    { title: "Cola Soda", url: "images/cola.jpg" },
-  ];
-  const sodas15 = [
-    { title: "Limbo Masala", url: "images/15/masala.jpg" },
-    { title: "Sweet Limbo", url: "images/15/sweetlemon.jpg" },
-    { title: "Salty Limbo", url: "images/15/saltyLemon.jpg" },
-    { title: "Ginger Limbo", url: "images/15/ginger.jpg" },
-    { title: "Nimbu Sharbat", url: "images/15/nimbuSharbat.jpg" },
+    { title: "Mango Soda", url: "images/mango.jpg", value:10  },
+    { title: "Limca Soda", url: "images/limca.jpg", value:10  },
+    { title: "Kala Khatta ", url: "images/kalaKhatta.jpg", value:10  },
+    { title: "Pudina Soda ", url: "images/pudina.jpg", value:10  },
+    { title: "Orange Soda", url: "images/orange.jpg", value:10  },
+    { title: "Jeera Soda", url: "images/jeera.jpg", value:10  },
+    { title: "Fruit Beer Soda", url: "images/fruitBeer.jpg", value:10  },
+    { title: "Blueberry Soda", url: "images/blueberry.jpg", value:10  },
+    { title: "Lemon Soda ", url: "images/lemon.jpg", value:10  },
+    { title: "Strawberry Soda ", url: "images/strawberry.jpg", value:10  },
+    { title: "Cola Soda", url: "images/cola.jpg", value:10  },
+    { title: "Limbo Masala", url: "images/15/masala.jpg", value:15  },
+    { title: "Sweet Limbo", url: "images/15/sweetlemon.jpg", value:15  },
+    { title: "Salty Limbo", url: "images/15/saltyLemon.jpg", value:15  },
+    { title: "Ginger Limbo", url: "images/15/ginger.jpg", value:15  },
+    { title: "Nimbu Sharbat", url: "images/15/nimbuSharbat.jpg", value:15  },
   ];
   return (
     <div className='cards'>
       <Banner/>
       <h2 className={styles.header_dark}>Best Sellers</h2>
       {bestSellers.map((soda, index) => {
-        let num = index + 1;
         return (
           <Card
             key={soda.title}
-            title={"# " + num + " " + soda.title}
+            title={soda.title}
             image={soda.url}
-            description='₹10'
             countAppend={props.countAppend}
-            value={10}
+            value={soda.value}
           />
         );
       })}
@@ -59,20 +53,7 @@ export default function Cards(props) {
             key={soda.title}
             title={soda.title}
             image={soda.url}
-            description='₹10'
-            countAppend={props.countAppend}
-            value={10}
-          />
-        );
-      })}
-      {sodas15.map((soda) => {
-        return (
-          <Card
-            key={soda.title}
-            title={soda.title}
-            image={soda.url}
-            description='₹15'
-            value={10}
+            value={soda.value}
           />
         );
       })}

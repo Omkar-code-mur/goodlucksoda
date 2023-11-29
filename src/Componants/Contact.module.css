@@ -53,7 +53,8 @@ p{
 }
 footer .row .col img {
   border-radius: 50px;
-  height: 17vw;
+  height: 50vh;
+  width: 50vh;
   align-self: center;
 }
 @media only screen and (max-width: 1000px) {
