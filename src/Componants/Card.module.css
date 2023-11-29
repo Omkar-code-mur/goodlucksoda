@@ -87,13 +87,14 @@
   @media only screen and (max-width: 500px) {
     .card {
       width: 80vw;
+      height: 110vw;
       font-size: 3vw;
     }
     .text{
       font-size: 6vw;
     }
     .image{
-    height: 100%;
+    height: 90%;
     }
     }
   
