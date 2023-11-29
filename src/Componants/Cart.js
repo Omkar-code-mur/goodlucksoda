@@ -97,6 +97,7 @@ function Price() {
                 const result = sodasX.find((obj) => obj.title === soda);
                 p = p + result.value;
                 q = q+1;
+                return(console.log("heelo2"))
             })
         }
        
