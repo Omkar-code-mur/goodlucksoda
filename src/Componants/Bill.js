@@ -5,7 +5,8 @@ import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { Data } from "../App";
 
-import "./Bill.module.css";
+import styles from "./Bill.module.css";
+
 const sodasX = [
   { title: "Mango Soda", url: "images/mango.jpg", value: 10 },
   { title: "Limca Soda", url: "images/limca.jpg", value: 10 },
@@ -26,11 +27,10 @@ const sodasX = [
 
 function Item({ soda, quantity }) {
   return (
-    <div className='billItem'>
-
-      <p>
-        {soda.title} ₹{soda.value}
-            quantity:{quantity}</p>
+    <div className={styles.billItem}>
+      <div className='container mx-3'>
+        <li>{soda.title} : ₹{soda.value} , quantity : {quantity}</li>
+      </div>
     </div>
   );
 }
@@ -54,7 +54,17 @@ function Items() {
   const array = Object.entries(result);
 
   return (
-    <div>
+    <div className='container'>
+      <h1>Invoice</h1>
+
+      <div className={styles.invoice}>
+        <ul>
+          <li>Invoice No. : {Math.floor(Math.random() * 1000)}</li>
+          <li>Invoice Date : {Date(Date.now())}</li>
+          <li></li>
+        </ul>
+      </div>
+      <ul>
       {data.s.length > 0 &&
         array.map((soda) => {
           const result = sodasX.find((obj) => obj.title === soda[0]);
@@ -65,6 +75,7 @@ function Items() {
             </div>
           );
         })}
+        </ul> 
     </div>
   );
 }
@@ -75,28 +86,31 @@ function Price() {
   let q = 0;
   const [totalPrice, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(0);
-
   useEffect(() => {
     setPrice(p);
     setQuantity(q);
   }, [p, q]);
 
+  const handlePrint = async () => {
+    window.print();
+  };
+
   return (
-    <div>
+    <div className='container'>
       {sodas.s.length > 0 &&
         sodas.s.map((soda) => {
           const result = sodasX.find((obj) => obj.title === soda);
           p = p + result.value;
           q = q + 1;
-          return(console.log("hello"))
+          return console.log("hello");
         })}
 
-      
-      <p>Total Quatity : {quantity} units</p>
-      <p>Total Cost : ₹{totalPrice}</p>
-      <button className='btn btn-primary my-3'>
-        {" "}
-        <a href="/"> Print Bill</a>
+      <div className='container'>
+        Total Quatity : {quantity} units <br />
+        Total Cost : ₹{totalPrice}
+      </div>
+      <button className={`btn btn-success my-3 `} onClick={handlePrint}>
+        Print Bill
       </button>
     </div>
   );
@@ -104,7 +118,7 @@ function Price() {
 
 export default function Bill() {
   return (
-    <div className='bill'>
+    <div className={styles.bill}>
       <Items />
 
       <Price />

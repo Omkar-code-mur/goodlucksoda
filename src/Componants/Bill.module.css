@@ -1,11 +1,19 @@
 .bill{
     background-color: aliceblue;
-    margin: 30px;
+    /* margin: 5px; */
     padding: 30px;
+    width: 100vw;
 }
 
 .billItem{
-    background-color: aliceblue;
-    margin: 30px;
-    padding: 30px;
+    background-color: rgb(244, 247, 249);
+    
+    font-size: smaller;
+}
+
+p{
+    font-size: 12px;
+}
+.container{
+    text-align: right;
 }
