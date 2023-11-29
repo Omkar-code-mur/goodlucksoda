@@ -18,3 +18,10 @@ p{
 .container{
     text-align: right;
 }
+td{
+    padding-left: 20px;
+    border: grey 1px solid;
+}
+table{
+    border: grey 1px solid;
+}
