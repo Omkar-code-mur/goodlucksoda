@@ -7,7 +7,7 @@ export default function Alert(props) {
     return data.charAt(0).toUpperCase() + data.toLowerCase().slice(1);
   };
   return (
-    <div style={{height:"50px"}}>
+    <div style={{height:"fit-content"}}>
       {props.alert && (
       <div
         className={`alert alert-${props.alert.type} alert-dismissible fade show`}

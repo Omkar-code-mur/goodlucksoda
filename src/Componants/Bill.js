@@ -6,7 +6,6 @@ import { useContext } from "react";
 import { Data } from "../App";
 
 import "./Bill.module.css";
-import { Link } from "react-router-dom";
 const sodasX = [
   { title: "Mango Soda", url: "images/mango.jpg", value: 10 },
   { title: "Limca Soda", url: "images/limca.jpg", value: 10 },
@@ -89,6 +88,7 @@ function Price() {
           const result = sodasX.find((obj) => obj.title === soda);
           p = p + result.value;
           q = q + 1;
+          return(console.log("hello"))
         })}
 
       
