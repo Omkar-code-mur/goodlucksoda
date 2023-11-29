@@ -64,7 +64,7 @@ function Items() {
       <div className={styles.invoice}>
         <ul>
           <li>Invoice No. : {Math.floor(Math.random() * 1000)}</li>
-          <li>Invoice Date : {`${today.getDate()}/${today.getMonth()}/${today.getYear()}`}</li>
+          <li>Invoice Date : {`${today.getDate()}/${today.getMonth()}/${today.getFullYear()}`}</li>
           <li>Invoice Date : {`${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`}</li>
           <li></li>
         </ul>
