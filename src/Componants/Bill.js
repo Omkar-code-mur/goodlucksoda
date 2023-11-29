@@ -29,7 +29,7 @@ function Item({ soda, quantity }) {
   
   return (
     <tr>
-       <td>{snum+=1/2}</td>
+       <td>{snum+=1}</td>
        <td>{soda.title}</td>
        <td>{quantity}</td>
        <td>{soda.value*quantity}</td>
