@@ -4,7 +4,7 @@ import Navbar from "./Componants/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cards from "./Componants/Cards";
 import Contact from "./Componants/Contact";
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 import About from "./Componants/About";
 import Cart from "./Componants/Cart";
 import Bill from "./Componants/Bill";
@@ -13,7 +13,22 @@ const Data = createContext(null);
 function App() {
   const [sodas, setSodas] = useState([]);
 
+
+  
+
+useEffect(() => {
+  const storedData = localStorage.getItem('sodas');
+  if (storedData) {
+    setSodas(JSON.parse(storedData));
+  }
+}, []);
+
+const saveData = () => {
+  localStorage.setItem('sodas', JSON.stringify(sodas));
+};
+
   const appendSoda = (soda) => {
+    saveData()
     setSodas([...sodas, soda]);
     console.log(sodas);
   };
@@ -26,6 +41,9 @@ function App() {
     setSodas([...temp, soda]);
     console.log(sodas);
   };
+
+
+  
 
   return (
     <Data.Provider value={{ s: sodas, a: appendSoda, r: removeSoda }}>

@@ -30,6 +30,9 @@ export default function Cards(props) {
     { title: "Ginger Limbo", url: "images/15/ginger.jpg", value: 15 },
     { title: "Nimbu Sharbat", url: "images/15/nimbuSharbat.jpg", value: 15 },
   ];
+
+
+  
   return (
     <div className='cards'>
       <Banner/>
