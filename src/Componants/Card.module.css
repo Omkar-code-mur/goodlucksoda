@@ -43,6 +43,10 @@
     color: red;
     font-size: larger;
   }
+  button{
+    margin: 5px;
+    padding: auto;
+  }
   
 
   @media only screen and (max-width: 1100px) {
@@ -76,25 +80,31 @@
     @media screen and (max-width:600px) {
       .card {
         width: 35vw;
-        height: 40vw;
+        height: fit-content;
         font-size: 5vw;
         display: inline-flex;
       }
       button{
         margin-top: 0;
-        scale: 0.5;
+        scale: 0.8;
       }
     }
     @media screen and (max-width:400px) {
       .card {
-        margin: 20px;
+        width: 42vw;
+        margin: 10px;
+        height: fit-content;
+      }
+      button{
+        margin-top: 0;
+        scale: 0.65;
+        font-size: 0.5rem;
       }
       
     }
-    @media screen and (max-width:350px) {
+    @media screen and (max-width:200px) {
       .card {
-        width: 80vw;
-        height: 80vw;
+        width: 95vw;
       }
       
     }
