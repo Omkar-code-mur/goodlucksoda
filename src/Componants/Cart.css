@@ -1,5 +1,7 @@
 /** @format */
-
+.cart{
+    margin-top: 100px;
+}
 .col {
     overflow-x: auto;
     height: 50vw;
@@ -37,7 +39,7 @@
 }
 
 .price{
-    position: relative;
+    
     background-color: azure;
     padding: 30px;
     margin: 30px;

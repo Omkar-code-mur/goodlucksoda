@@ -26,11 +26,17 @@ useEffect(() => {
 const saveData = () => {
   localStorage.setItem('sodas', JSON.stringify(sodas));
 };
+const DeleteData = () => {
+  setSodas([])
+  saveData()
+};
 
-  const appendSoda = (soda) => {
-    saveData()
+  const appendSoda = async(soda) => {
+    
     setSodas([...sodas, soda]);
-    console.log(sodas);
+    saveData()
+    console.log(sodas)
+    console.log(localStorage.getItem('sodas'))
   };
   const removeSoda = (soda) => {
     let temp = sodas;
@@ -46,7 +52,7 @@ const saveData = () => {
   
 
   return (
-    <Data.Provider value={{ s: sodas, a: appendSoda, r: removeSoda }}>
+    <Data.Provider value={{ s: sodas, a: appendSoda, r: removeSoda , d:DeleteData }}>
       <Router>
         <div>
           

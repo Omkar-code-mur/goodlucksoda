@@ -23,6 +23,7 @@ header{
     display:flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
 }
 
 .nav .logo a{
@@ -58,7 +59,7 @@ header{
 
 .drop_down{
   /* display: none; */
-  position: absolute;
+  position: fixed;
   right: 2rem;
   top: 95px;
   width: 300px;

@@ -24,14 +24,27 @@ const sodasX = [
   { title: "Nimbu Sharbat", url: "images/15/nimbuSharbat.jpg", value: 15 },
 ];;
 
-function Item({soda,quantity}) {
-    
+function Item({soda,quantity,setQuantity}) {
+  let data = useContext(Data);
+    const handleAdd = ()=>{
+      data.a(soda.title)
+
+    }
+    const handleMinus = ()=>{
+      quantity = quantity-1
+
+    }
   return (
     <div className='cartItem'>
         <img className={styles.image} src={soda.url} alt={soda.title} />
         
         <h2 className={styles.text}>{soda.title} <b>₹{soda.value}</b></h2>
         <h2>quantity:{quantity}</h2>
+        <div className='qty'>
+          <button className='btn btn-dark mx-2' onClick={handleAdd}>+</button>
+          <button className='btn btn-dark' onClick={handleMinus}>-</button>
+        </div>
+        
       
     </div>
   )
@@ -59,6 +72,7 @@ function Items() {
     
   return (
     <div>
+      <button className='btn btn-dark' onClick={()=>{data.d()}}>Discard all</button>
         {data.s.length > 0 &&
             array.map((soda)=>{
                 const result = sodasX.find((obj) => obj.title === soda[0]);
@@ -85,7 +99,7 @@ function Price() {
     useEffect(()=>{
         setPrice(p)
         setQuantity(q)
-    },[p,q])
+    },[p,q,sodas])
 
     
 
