@@ -26,16 +26,16 @@ const sodasX = [
   { title: "Nimbu Sharbat", url: "images/15/nimbuSharbat.jpg", value: 15 },
 ];
 let snum = 0;
+
 function Item({ soda, quantity }) {
-  
   return (
     <tr>
-       <td>{snum+=1}</td>
-       <td>{soda.title}</td>
-       <td>{quantity}</td>
-       <td>{soda.value*quantity}</td>
-       </tr>
-    
+      
+      <td>{(snum += 1)}</td>
+      <td>{soda.title}</td>
+      <td>{quantity}</td>
+      <td>{soda.value * quantity}</td>
+    </tr>
   );
 }
 
@@ -56,7 +56,7 @@ function Items() {
 
   // Convert the accumulator object into an array of key-value pairs
   const array = Object.entries(result);
- let today = new Date(Date.now())
+  let today = new Date(Date.now());
 
   return (
     <div className='container'>
@@ -65,8 +65,14 @@ function Items() {
       <div className={styles.invoice}>
         <ul>
           <li>Invoice No. : {Math.floor(Math.random() * 1000)}</li>
-          <li>Invoice Date : {`${today.getDate()}/${today.getMonth()}/${today.getFullYear()}`}</li>
-          <li>Invoice Date : {`${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`}</li>
+          <li>
+            Invoice Date :{" "}
+            {`${today.getDate()}/${today.getMonth()}/${today.getFullYear()}`}
+          </li>
+          <li>
+            Invoice Date :{" "}
+            {`${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`}
+          </li>
           <li></li>
         </ul>
       </div>
@@ -79,24 +85,21 @@ function Items() {
             <td>Total</td>
           </tr>
         </thead>
-      <tbody>
-      {data.s.length > 0 &&
-        array.map((soda) => {
-          const result = sodasX.find((obj) => obj.title === soda[0]);
-          
-          return (
-            
-              <Item key={result} soda={result} quantity={soda[1]} />
-              
-          );
-        })}
+        <tbody>
+          {data.s.length > 0 &&
+            array.map((soda) => {
+              const result = sodasX.find((obj) => obj.title === soda[0]);
+
+              return <Item key={result} soda={result} quantity={soda[1]} />;
+            })}
         </tbody>
-        </table>
+      </table>
     </div>
   );
 }
 
 function Price() {
+  
   let sodas = useContext(Data);
   let p = 0;
   let q = 0;

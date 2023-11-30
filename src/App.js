@@ -13,31 +13,35 @@ const Data = createContext(null);
 function App() {
   const [sodas, setSodas] = useState([]);
 
+  const saveData = () => {
+    localStorage.setItem('sodas', JSON.stringify(sodas));
+  };
+  
 
   
+
 
 useEffect(() => {
   const storedData = localStorage.getItem('sodas');
   if (storedData) {
     setSodas(JSON.parse(storedData));
   }
+
 }, []);
 
-const saveData = () => {
-  localStorage.setItem('sodas', JSON.stringify(sodas));
-};
+
 const DeleteData = () => {
   setSodas([])
   saveData()
 };
 
-  const appendSoda = async(soda) => {
-    
-    setSodas([...sodas, soda]);
-    saveData()
-    console.log(sodas)
-    console.log(localStorage.getItem('sodas'))
-  };
+const appendSoda = (soda) => {
+  setSodas((prevSodas) => {
+    const newSodas = [...prevSodas, soda];
+    localStorage.setItem('sodas', JSON.stringify(newSodas));
+    return newSodas;
+  });
+};
   const removeSoda = (soda) => {
     let temp = sodas;
     if (temp.includes(soda)) {

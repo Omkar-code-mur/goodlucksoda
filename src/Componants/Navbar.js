@@ -60,19 +60,19 @@ export default function Navbar(props) {
       </div>
       <div className={styles.drop_down + " " + dropdown}>
         <li>
-          <Link to='/'>Home</Link>
+          <Link to='/'><button className="btn btn-dark" onClick={toggleDropdown}>Home</button></Link>
         </li>
         <li>
-          <Link to='about'>About</Link>
+          <Link to='about'><button className="btn btn-dark" onClick={toggleDropdown}>About</button></Link>
         </li>{" "}
         <li>
-          <Link to='contact'>Contact</Link>
+          <Link to='contact'><button className="btn btn-dark" onClick={toggleDropdown}>Contact</button></Link>
         </li>
         <li>
-          <a href ='https://g.page/r/CSW6pGbKLNpGEBM/review'>Add Review</a>
+          <a href ='https://g.page/r/CSW6pGbKLNpGEBM/review'><button className="btn btn-dark" onClick={toggleDropdown}>Add Review</button></a>
         </li>
         <li>
-            <Link to="cart"><i className='fas fa-shopping-cart'></i></Link>
+            <Link to="cart"><button className="btn btn-dark" onClick={toggleDropdown}><i className='fas fa-shopping-cart'></i></button></Link>
             
           </li>
       </div>

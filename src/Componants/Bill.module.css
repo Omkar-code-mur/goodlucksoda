@@ -1,9 +1,11 @@
 .bill{
     background-color: aliceblue;
     /* margin: 5px; */
-    padding: 30px;
-    width: 100vw;
+    /* padding: 30px; */
+    width: fit-content;
     border: grey 1px solid;
+    position: fixed;
+    /* scale: 100vw; */
 }
 
 .billItem{
