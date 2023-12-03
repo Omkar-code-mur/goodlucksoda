@@ -10,6 +10,7 @@ import Cart from "./Componants/Cart";
 import Bill from "./Componants/Bill";
 
 const Data = createContext(null);
+
 function App() {
   const [sodas, setSodas] = useState([]);
 
@@ -30,11 +31,16 @@ function App() {
   };
 
   const appendSoda = (soda) => {
+    
     setSodas((prevSodas) => {
       const newSodas = [...prevSodas, soda];
       localStorage.setItem("sodas", JSON.stringify(newSodas));
       return newSodas;
     });
+    if (sodas.includes(soda)){
+      return 1
+    }
+    return 0
   };
   const removeSoda = (soda) => {
     

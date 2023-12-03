@@ -1,57 +1,53 @@
-import React, { useEffect, useMemo, useState } from 'react'
+/** @format */
 
-import { useContext } from 'react'
-import { Data } from '../App'
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 
-import styles from "./Cart.module.css"
-import { Link } from 'react-router-dom';
-const sodasX = [
-  { title: "Mango", url: "images/mango.jpg", value: 10 },
-  { title: "Limca", url: "images/limca.jpg", value: 10 },
-  { title: "Kala Khatta", url: "images/kalaKhatta.jpg", value: 10 },
-  { title: "Orange ", url: "images/orange.jpg", value: 10 },
-  { title: "Pudina ", url: "images/pudina.jpg", value: 10 },
-  { title: "Jeera", url: "images/jeera.jpg", value: 10 },
-  { title: "Fruit Beer", url: "images/fruitBeer.jpg", value: 10 },
-  { title: "Blueberry", url: "images/blueberry.jpg", value: 10 },
-  { title: "Lemon ", url: "images/lemon.jpg", value: 10 },
-  { title: "Strawberry ", url: "images/strawberry.jpg", value: 10 },
-  { title: "Cola", url: "images/cola.jpg", value: 10 },
-  { title: "Limbo Masala", url: "images/15/masala.jpg", value: 15 },
-  { title: "Sweet Limbo", url: "images/15/sweetlemon.jpg", value: 15 },
-  { title: "Salty Limbo", url: "images/15/saltyLemon.jpg", value: 15 },
-  { title: "Ginger Limbo", url: "images/15/ginger.jpg", value: 15 },
-  { title: "Nimbu Sharbat", url: "images/15/nimbuSharbat.jpg", value: 15 },
-];;
+import { useContext } from "react";
+import { Data } from "../App";
 
-function Item({soda,quantity,setQuantity}) {
+import styles from "./Cart.module.css";
+import { Link } from "react-router-dom";
+import { sodas as sodasX } from "./utils";
+function Item({ soda, initialq }) {
   let data = useContext(Data);
-    const handleAdd = ()=>{
-      data.a(soda.title)
 
+  const [quantity, setQuantity] = useState(initialq);
+
+  const handleAdd = useCallback(() => {
+    setQuantity(quantity + data.a(soda.title));
+  }, [data, soda.title, quantity]);
+
+  const handleMinus = useCallback(() => {
+    // Check if the quantity is greater than zero
+    if (quantity > 0) {
+      // Remove the soda from the context state
+      console.log(data.s)
+      data.r(soda.title);
+      setQuantity(quantity - 1);
+      console.log(data.s)
     }
-    const handleMinus = () => {
-      // Check if the quantity is greater than zero
-      if (quantity > 0) {
-        // Remove the soda from the context state
-        data.r(soda.title);
-      }
-    };
-    
+  }, [data, quantity, soda.title]);
+  useEffect(() => {}, [soda, initialq, data.s, handleAdd, handleMinus]);
+  console.log(quantity, initialq);
+
   return (
     <div className={styles.cartItem}>
-        <img className={styles.image} src={soda.url} alt={soda.title} />
-        
-        <h2 className={styles.text}>{soda.title} <b>₹{soda.value}</b></h2>
-        <h2>quantity:{quantity}</h2>
-        <div className='qty'>
-          <button className='btn btn-dark mx-2' onClick={handleAdd}>+</button>
-          <button className='btn btn-dark' onClick={handleMinus}>-</button>
-        </div>
-        
-      
+      <img className={styles.image} src={soda.url} alt={soda.title} />
+
+      <h2 className={styles.text}>
+        {soda.title} <b>₹{soda.value}</b>
+      </h2>
+      <h2>quantity:{quantity}</h2>
+      <div className='qty'>
+        <button className='btn btn-dark mx-2' onClick={handleAdd}>
+          +
+        </button>
+        <button className='btn btn-dark' onClick={handleMinus}>
+          -
+        </button>
+      </div>
     </div>
-  )
+  );
 }
 
 // Use named exports instead of default exports for better code completion and refactoring
@@ -74,10 +70,10 @@ export function Items() {
       }, {}) // Initialize the frequency object to an empty object
     );
   }, [data.s]); // Pass data.s as a dependency array to the useMemo hook
-  console.log(result)
+  console.log(result);
   return (
     <div className={styles.items}>
-      <button className="btn btn-dark" onClick={() => data.d()}>
+      <button className='btn btn-dark' onClick={() => data.d()}>
         Discard all
       </button>
       {data.s.length > 0 &&
@@ -89,7 +85,7 @@ export function Items() {
 
           return (
             <div key={soda}>
-              <Item soda={sodaObject} quantity={quantity} />
+              <Item soda={sodaObject} initialq={quantity} />
             </div>
           );
         })}
@@ -97,58 +93,52 @@ export function Items() {
   );
 }
 
-
 function Price() {
-    let sodas = useContext(Data);
+  let sodas = useContext(Data);
+  const [totalPrice, setPrice] = useState(0);
+  const [quantity, setQuantity] = useState(0);
+
+  useEffect(() => {
+    // Initialize the price and quantity variables to zero
     let p = 0;
     let q = 0;
-    const [totalPrice,setPrice] = useState(0);
-    const [quantity,setQuantity] = useState(0);
 
-    useEffect(()=>{
-        setPrice(p)
-        setQuantity(q)
-    },[p,q,sodas])
+    // Loop through the sodas.s array and calculate the price and quantity
+    sodas.s.forEach((soda) => {
+      const result = sodasX.find((obj) => obj.title === soda);
+      p = p + result.value;
+      q = q + 1;
+    });
 
-    
+    // Update the state with the calculated values
+    setPrice(p);
+    setQuantity(q);
+    console.log(sodas.s.length);
+  }, [sodas.s]); // Pass sodas.s as a dependency array to the useEffect hook
 
   return (
     <div className={styles.price}>
-        
-        {sodas.s.length > 0 &&
-            sodas.s.map((soda)=>{
-                const result = sodasX.find((obj) => obj.title === soda);
-                p = p + result.value;
-                q = q+1;
-                return(console.log("heelo2"))
-            })
-        }
-       
-        
-        <h2>Total Cost : ₹{totalPrice}</h2>
-        <h3>Total Quatity : {quantity} units</h3>
-        <button className="btn btn-primary my-3" > <Link to="/bill"> Generate bill</Link></button>
-      
+      <h2>Total Cost : ₹{totalPrice}</h2>
+      <h3>Total Quatity : {quantity} units</h3>
+      <button className="btn btn-primary my-3">
+        <Link to="/bill"> Generate bill</Link>
+      </button>
     </div>
-  )
+  );
 }
-
 
 
 export default function Cart() {
   return (
     <div className='cart'>
-        <div className={styles.row}>
-            <div className={styles.col}>
-            <Items/>
-            </div>
-            <div className={styles.col}>
-            <Price/>
-            </div>
+      <div className={styles.row}>
+        <div className={styles.col}>
+          <Items />
         </div>
-        
-        
-      
+        <div className={styles.col}>
+          <Price />
+        </div>
+      </div>
     </div>
-  )
+  );
 }
