@@ -1,4 +1,4 @@
-footer{
+.about{
   width: 100%;
   height: auto;
   bottom: 0;
@@ -40,7 +40,7 @@ h1{
   padding-bottom: 2rem;
 }
 
-footer .row .col img{
+figure img{
   height:40vw;
   align-self:center;
  }

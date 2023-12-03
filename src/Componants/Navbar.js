@@ -22,7 +22,11 @@ export default function Navbar(props) {
       setDropdownIcon("bars");
     }
     console.log("clicked");
+    
   };
+  const scrollTop = ()=>{
+    window.scroll(0,0)
+  }
 
   return (
     <>
@@ -34,19 +38,19 @@ export default function Navbar(props) {
         </div>
         <ul className={styles.links}>
           <li>
-            <Link to='/'>Home</Link>
+            <Link to='/'><button className="btn btn-dark" onClick={scrollTop}>Home</button></Link>
           </li>
           <li>
-            <Link to='about'>About</Link>
+            <Link to='about'><button className="btn btn-dark" onClick={scrollTop}>About</button></Link>
           </li>{" "}
           <li>
-            <Link to='contact'>Contact</Link>
+            <Link to='contact'><button className="btn btn-dark" onClick={scrollTop}>Contact</button></Link>
           </li>
           <li>
-          <a href ='https://g.page/r/CSW6pGbKLNpGEBM/review' target="_black">Add Review</a>
+          <button className="btn btn-dark" onClick={scrollTop}><a href ='https://g.page/r/CSW6pGbKLNpGEBM/review' target="_black">Add Review</a></button>
         </li>
           <li>
-            <Link to="cart"><i className='fas fa-shopping-cart'></i></Link>
+            <Link to="cart"><button className="btn btn-dark" onClick={scrollTop}><i className='fas fa-shopping-cart'></i></button></Link>
             
           </li>
         </ul>

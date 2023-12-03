@@ -10,7 +10,7 @@ export default function Contact() {
         <div className={styles.col}>
           <img src="images/logo/logo2.jpg" alt="a boy drinking soda" />
         </div>
-
+    
         <div className={styles.col}>
         <h2>Address </h2>
         <a className={styles.email_id} href='https://maps.app.goo.gl/a5B7RYBvpd9oZV5P6' rel="noreferrer" target="_blank">

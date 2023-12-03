@@ -34,7 +34,7 @@ export default function Cards(props) {
 
   
   return (
-    <div className='cards'>
+    <div className={styles.cards}>
       <Banner/>
       <h2 className={styles.header_dark}>Best Sellers</h2>
       {bestSellers.map((soda, index) => {

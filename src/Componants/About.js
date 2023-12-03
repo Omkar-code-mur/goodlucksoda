@@ -2,17 +2,19 @@
 
 import React from "react";
 import styles from "./About.module.css";
+// Use named exports instead of default exports for better code completion and refactoring
 export default function About() {
+  // Use semantic HTML elements for better accessibility and SEO
   return (
-    <footer>
-        <h2 className={styles.header_dark}>About Us</h2>
+    <section className={styles.about}>
+      <h2 className={styles.header_dark}>About Us</h2>
       <div className={styles.row}>
-        <div className={styles.col}>
-          <img src='images/logo/shopPhoto.jpeg' alt='goodluck soda shop' />
-        </div>
+        <figure className={styles.col}>
+          <img src="images/logo/shopPhoto.jpeg" alt="Goodluck Soda Shop" />
+        </figure>
 
-        <div className={styles.col}>
-          <h1>GoodLuck Soda Story </h1>
+        <article className={styles.col}>
+          <h1>GoodLuck Soda Story</h1>
 
           <p>
             Goodluck Soda Shop is a family-owned business that started in 2014
@@ -23,9 +25,9 @@ export default function About() {
             combinations, and we always welcome feedback and suggestions from
             our customers.
           </p>
-        </div>
+        </article>
       </div>
-      
-    </footer>
+    </section>
   );
 }
+

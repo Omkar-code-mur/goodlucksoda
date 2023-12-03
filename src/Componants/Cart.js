@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 
 import { useContext } from 'react'
 import { Data } from '../App'
 
-import styles from "./Cart.css"
+import styles from "./Cart.module.css"
 import { Link } from 'react-router-dom';
 const sodasX = [
   { title: "Mango", url: "images/mango.jpg", value: 10 },
@@ -30,12 +30,16 @@ function Item({soda,quantity,setQuantity}) {
       data.a(soda.title)
 
     }
-    const handleMinus = ()=>{
-      quantity = quantity-1
-
-    }
+    const handleMinus = () => {
+      // Check if the quantity is greater than zero
+      if (quantity > 0) {
+        // Remove the soda from the context state
+        data.r(soda.title);
+      }
+    };
+    
   return (
-    <div className='cartItem'>
+    <div className={styles.cartItem}>
         <img className={styles.image} src={soda.url} alt={soda.title} />
         
         <h2 className={styles.text}>{soda.title} <b>₹{soda.value}</b></h2>
@@ -50,44 +54,49 @@ function Item({soda,quantity,setQuantity}) {
   )
 }
 
-function Items() {
-    let data = useContext(Data);
-    const result = data.s.reduce((acc, name) => {
-        // Check if the name is already in the accumulator object
-        if (acc[name]) {
-          // If the name is already in the object, increment its frequency by one
-          acc[name]++;
-        } else {
-          // If the name is not in the object, initialize its frequency to one
-          acc[name] = 1;
-        }
-        // Return the updated accumulator object
-        return acc;
-      }, {}); // Initialize the accumulator object to an empty object
-      
-      // Convert the accumulator object into an array of key-value pairs
-      const array = Object.entries(result);
-   
-      
-    
-  return (
-    <div>
-      <button className='btn btn-dark' onClick={()=>{data.d()}}>Discard all</button>
-        {data.s.length > 0 &&
-            array.map((soda)=>{
-                const result = sodasX.find((obj) => obj.title === soda[0]);
+// Use named exports instead of default exports for better code completion and refactoring
+export function Items() {
+  // Use the useContext hook to access the data context
+  const data = useContext(Data);
 
-                return(
-                    <div>
-                    <Item key={result} soda={result} quantity={soda[1]} />
-                    </div>
-                )
-            })
-        }
-      
+  // Use the useMemo hook to memoize the result of the reduce function
+  // This will avoid recomputing the result on every render unless data.s changes
+  const result = useMemo(() => {
+    // Use a more descriptive name for the accumulator object, such as frequency
+    // Use the Object.fromEntries method to convert the array of key-value pairs into an object
+    return (
+      // Use the reduce method to count the frequency of each soda name in data.s
+      data.s.reduce((frequency, name) => {
+        // Use the spread operator to copy the previous frequency object
+        // Use the bracket notation to access and update the frequency of the current name
+        // Use the logical OR operator to assign a default value of zero if the name is not in the object
+        return { ...frequency, [name]: (frequency[name] || 0) + 1 };
+      }, {}) // Initialize the frequency object to an empty object
+    );
+  }, [data.s]); // Pass data.s as a dependency array to the useMemo hook
+  console.log(result)
+  return (
+    <div className={styles.items}>
+      <button className="btn btn-dark" onClick={() => data.d()}>
+        Discard all
+      </button>
+      {data.s.length > 0 &&
+        // Use the Object.entries method to convert the result object into an array of key-value pairs
+        // Use array destructuring to assign the key and value to soda and quantity variables
+        Object.entries(result).map(([soda, quantity]) => {
+          // Use the find method to find the soda object that matches the soda name
+          const sodaObject = sodasX.find((obj) => obj.title === soda);
+
+          return (
+            <div key={soda}>
+              <Item soda={sodaObject} quantity={quantity} />
+            </div>
+          );
+        })}
     </div>
-  )
+  );
 }
+
 
 function Price() {
     let sodas = useContext(Data);
@@ -104,7 +113,7 @@ function Price() {
     
 
   return (
-    <div className='price'>
+    <div className={styles.price}>
         
         {sodas.s.length > 0 &&
             sodas.s.map((soda)=>{
@@ -129,11 +138,11 @@ function Price() {
 export default function Cart() {
   return (
     <div className='cart'>
-        <div className="row">
-            <div className="col">
+        <div className={styles.row}>
+            <div className={styles.col}>
             <Items/>
             </div>
-            <div className="col">
+            <div className={styles.col}>
             <Price/>
             </div>
         </div>

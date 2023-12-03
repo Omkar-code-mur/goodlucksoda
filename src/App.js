@@ -14,65 +14,52 @@ function App() {
   const [sodas, setSodas] = useState([]);
 
   const saveData = () => {
-    localStorage.setItem('sodas', JSON.stringify(sodas));
+    localStorage.setItem("sodas", JSON.stringify(sodas));
   };
-  
 
-  
-
-
-useEffect(() => {
-  const storedData = localStorage.getItem('sodas');
-  if (storedData) {
-    setSodas(JSON.parse(storedData));
-  }
-
-}, []);
-
-
-const DeleteData = () => {
-  setSodas([])
-  saveData()
-};
-
-const appendSoda = (soda) => {
-  setSodas((prevSodas) => {
-    const newSodas = [...prevSodas, soda];
-    localStorage.setItem('sodas', JSON.stringify(newSodas));
-    return newSodas;
-  });
-};
-  const removeSoda = (soda) => {
-    let temp = sodas;
-    if (temp.includes(soda)) {
-      let i = temp.indexOf(soda);
-      temp.splice(i, 1);
+  useEffect(() => {
+    const storedData = localStorage.getItem("sodas");
+    if (storedData) {
+      setSodas(JSON.parse(storedData));
     }
-    setSodas([...temp, soda]);
-    console.log(sodas);
+  }, []);
+
+  const DeleteData = () => {
+    setSodas([]);
+    saveData();
   };
 
-
-  
+  const appendSoda = (soda) => {
+    setSodas((prevSodas) => {
+      const newSodas = [...prevSodas, soda];
+      localStorage.setItem("sodas", JSON.stringify(newSodas));
+      return newSodas;
+    });
+  };
+  const removeSoda = (soda) => {
+    
+    setSodas((prevSodas)=>{
+      const temp = prevSodas;
+      if (temp.includes(soda)) {
+        const i = temp.indexOf(soda);
+        temp.splice(i, 1);
+      }
+      localStorage.setItem("sodas", JSON.stringify(temp));
+      return temp
+    })
+  };
 
   return (
-    <Data.Provider value={{ s: sodas, a: appendSoda, r: removeSoda , d:DeleteData }}>
+    <Data.Provider
+      value={{ s: sodas, a: appendSoda, r: removeSoda, d: DeleteData }}>
       <Router>
-        <div>
-          
-          <Navbar />
-
-          <div className='cards'>
-            <Routes>
-              <Route path='/' element={<Cards />} />
-              <Route path='/contact' element={<Contact />} />
-              <Route path='/about' element={<About />} />
-              <Route path='/cart' element={<Cart />} />
-            </Routes>
-          </div>
-        </div>
+        <Navbar />
 
         <Routes>
+          <Route path='/' element={<Cards />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/cart' element={<Cart />} />
           <Route path='/bill' element={<Bill />} />
         </Routes>
       </Router>

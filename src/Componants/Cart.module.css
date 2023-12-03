@@ -1,0 +1,75 @@
+/* Use flexbox to create a two-column layout */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 96vw;
+    padding: 30px;
+    background-color: rgb(211, 212, 213);
+    border-radius: 20px;
+  }
+
+  
+  /* Adjust the width and margin of the columns */
+  .col {
+    width: 45vw;
+    height: 100vh;
+    margin: 10px;
+    overflow-x: auto;
+  }
+  
+  /* Style the cart items */
+  .cartItem {
+    padding: 30px;
+    background-color: rgb(240, 242, 245);
+    border-radius: 20px;
+    margin: 20px;
+  }
+  
+  /* Style the cart item image */
+  .cartItem img {
+    border-radius: 20px;
+    width: 20%;
+    height: fit-content;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+  }
+  
+  /* Style the price */
+  .price {
+    background-color: azure;
+    padding: 30px;
+    margin: 30px;
+    border-radius: 20px;
+    margin-top: 20vh;
+  }
+  .items{
+    margin-top: 15vh;
+  }
+  
+  /* Use media queries to make the layout responsive */
+  @media screen and (max-width: 733px) {
+    /* Stack the columns on small screens */
+    .row {
+      flex-direction: column;
+    }
+  
+    /* Adjust the width and margin of the columns */
+    .col {
+      width: 80%;
+      margin: 0;
+    }
+  
+    /* Adjust the padding and margin of the cart items */
+    .cartItem {
+      padding: 5px;
+      margin: 5px;
+    }
+  
+    /* Adjust the margin of the price */
+    .price {
+      margin: 10px;
+    }
+  }
+  

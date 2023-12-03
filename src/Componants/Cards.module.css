@@ -12,6 +12,13 @@
 .card{
     width:100vw;
 }
+.cards{
+  
+    display:inline-block;
+    background: url("../../public/images/background.jpg") ;
+    background-position: top;
+  }
+  
 
 @media screen and (max-width:1500) {
     .banner{

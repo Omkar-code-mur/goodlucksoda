@@ -1,16 +1,15 @@
 .banner{
     width: 100vw;
     margin-top: 5vw;
-    overflow: hidden;
 }
 
 @media screen and (max-width:500px) {
     .banner{
-        margin-top: 10vw;
+        margin-top: 15vh;
     }
 }
 @media screen and (max-width:400px) {
     .banner{
-        margin-top: 14vw;
+        margin-top: 15vh;
     }
 }
